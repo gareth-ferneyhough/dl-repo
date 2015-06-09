@@ -50,7 +50,7 @@
         <div class="container" style="padding-top:250px">
             <form class="form-inline" action="/download" method="get">                
                 <div class="form-group">                              
-                    <input type="text" class="form-control" aria-label="..." value="repository URL" name="url">
+                    <input type="text" class="form-control" aria-label="..." value="repository URL" name="url" size="50">
                 </div>
                 <div class="form-group">
                     <select class="form-control" name="compression">
@@ -60,8 +60,11 @@
                         <option>tar.gz</option>
                     <select>    
                 </div>
-                <button class="btn btn-primary" type="submit">Download</button>                                                                
-            </form>                
+                <button class="btn btn-primary" type="submit">Download</button>
+            </form>     
+            <label>Enter git ssh clone url to download</label><br/>
+            <label>Example: git@github.com:mitsuhiko/flask.git</label><br/>
+            <label>You must have your ssh keys configured correctly</label>
         </div>
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
