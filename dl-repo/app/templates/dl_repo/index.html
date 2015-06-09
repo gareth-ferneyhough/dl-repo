@@ -9,6 +9,8 @@
                 max-width: 600px;
                 padding-top: 100px;
             }
+            .flashes {color: red;}
+            .errors {padding-top: 50px;}
             h2 {color: red;}
         </style>
     </head>
@@ -48,7 +50,10 @@
           </div><!-- /.container-fluid -->
         </nav>      
         <div class="container" style="padding-top:250px">
-            <form class="form-inline" action="/download" method="get">                
+            <label>Enter git ssh clone url to download</label><br/>
+            <label>Example: git@github.com:gareth-ferneyhough/dl-repo.git</label><br/>
+            <label>You must have your ssh keys configured correctly</label>
+            <form class="form-inline" action="/download" method="get">               
                 <div class="form-group">                              
                     <input type="text" class="form-control" aria-label="..." value="repository URL" name="url" size="50">
                 </div>
@@ -61,11 +66,20 @@
                     <select>    
                 </div>
                 <button class="btn btn-primary" type="submit">Download</button>
-            </form>     
-            <label>Enter git ssh clone url to download</label><br/>
-            <label>Example: git@github.com:mitsuhiko/flask.git</label><br/>
-            <label>You must have your ssh keys configured correctly</label>
-        </div>
+            </form>
+            <div class="errors">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <label class=flashes>Error:</label>
+                    <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+            </div>
+        </div>        
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="static/dl-repo.js"></script>
