@@ -20,6 +20,6 @@ RUN apt-get install -y python python-dev python-distribute python-pip
 
 ADD dl-repo /dl-repo
 RUN pip install -r /dl-repo/requirements.txt
-EXPOSE 80
+EXPOSE 8080
 WORKDIR /dl-repo
 CMD python run.py

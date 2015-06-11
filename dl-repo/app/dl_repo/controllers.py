@@ -11,15 +11,15 @@ def index():
 
 @dl_repo.route('download', methods=['GET'])
 def download():
-    url = request.args.get('url')
-    compression = request.args.get('compression')
+    # url = request.args.get('url')
+    # compression = request.args.get('compression')
     
-    try:
-        destination_path = download_repository(url)
-        filename = compress_repository(destination_path, compression)
-    except Exception as e:
-        flash(str(e))
-        return redirect(url_for('.index'))
+    # try:
+    #     destination_path = download_repository(url)
+    #     filename = compress_repository(destination_path, compression)
+    # except Exception as e:
+    #     flash(str(e))
+    #     return redirect(url_for('.index'))
 
-    return send_from_directory('/var/git', 'tmp.zip', 
+    return send_from_directory('tmp', 'git.zip', 
         as_attachment=True, attachment_filename='download.zip')

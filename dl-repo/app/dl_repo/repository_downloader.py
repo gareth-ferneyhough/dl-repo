@@ -9,7 +9,7 @@ def git(*args):
 def download_repository(repository_url):
 	# this is in no way ideal, as we are deleting
 	# all the repos every time we run.
-	destination_path = '/var/git/tmp'	
+	destination_path = 'app/tmp/git'	
 	if os.path.isdir(destination_path):
 		shutil.rmtree(destination_path) 
 	git('clone', repository_url, destination_path)

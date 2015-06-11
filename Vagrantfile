@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
         d.build_image "/vagrant",        
             args: "-t app-image"
         d.run "app-image",
-            args: "-d -p 80:80"
-    config.vm.network "forwarded_port", guest: 80, host: 8080
+            args: "-d -p 8080:8080"
+    config.vm.network "forwarded_port", guest: 8080, host: 8080
   end
 end
