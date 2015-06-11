@@ -2,4 +2,4 @@
 app.db.
 env
 .vagrant
-dl-repo/app/tmp*
+dl-repo/tmp*
