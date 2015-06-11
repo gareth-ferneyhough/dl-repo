@@ -22,4 +22,4 @@ You must have Vagrant installed, along with Virtualbox.
 
 `Vagrant up`
 
-Visit `0.0.0.0:8080` in your browser.
+Wait for Vagrant and Docker to complete their magic, then visit `0.0.0.0:8080` in your browser.
